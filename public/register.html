@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - BookNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <div class="auth-logo">📚 BookNest</div>
+    <h1>Create your account</h1>
+    <p class="auth-subtitle">Join BookNest to search and discover books</p>
+
+    <p id="formError" class="form-error" hidden></p>
+
+    <form id="registerForm" novalidate>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
+        <p class="field-error" id="nameError"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        <p class="field-error" id="emailError"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-wrap">
+          <input type="password" id="password" name="password" placeholder="At least 6 characters" autocomplete="new-password">
+          <button type="button" class="toggle-password" data-toggle="password" aria-label="Show password">👁</button>
+        </div>
+        <p class="field-error" id="passwordError"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-wrap">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password">
+          <button type="button" class="toggle-password" data-toggle="confirmPassword" aria-label="Show password">👁</button>
+        </div>
+        <p class="field-error" id="confirmPasswordError"></p>
+      </div>
+
+      <button type="submit" id="submitBtn" class="auth-btn">Create Account</button>
+    </form>
+
+    <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

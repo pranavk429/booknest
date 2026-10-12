@@ -1,0 +1,8 @@
+# Dependencies (reinstall with: npm install)
+node_modules/
+
+# Local user data - created automatically on first run
+users.json
+
+# macOS
+.DS_Store

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookNest - Online Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">📚 BookNest</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+      <button type="button" id="cartBtn" class="cart">🛒 Cart: <span id="cartCount">0</span></button>
+      <span class="user-area">
+        👤 <span id="userName">Loading...</span>
+        <button id="logoutBtn" class="logout-btn" type="button">Logout</button>
+      </span>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find Your Next Favorite Book</h1>
+    <p>Search and discover books easily</p>
+    <input type="text" id="searchBox" placeholder="Search by title or author...">
+  </section>
+
+  <!-- Main Content -->
+  <main id="books">
+    <div class="filter-section">
+      <h2>Filter Books</h2>
+
+      <label for="categoryFilter">Category</label>
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="fiction">Fiction</option>
+        <option value="programming">Programming</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="self-help">Self Help</option>
+      </select>
+
+      <label for="priceFilter">Price</label>
+      <select id="priceFilter">
+        <option value="all">All Prices</option>
+        <option value="300">Below ₹300</option>
+        <option value="500">Below ₹500</option>
+        <option value="1000">Below ₹1000</option>
+      </select>
+
+      <label for="sortFilter">Sort By</label>
+      <select id="sortFilter">
+        <option value="default">Default</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+
+      <button type="button" onclick="clearFilters()">Clear Filters</button>
+    </div>
+
+    <section class="book-section">
+      <div class="section-heading">
+        <h2>Available Books</h2>
+        <p id="resultCount">0 books found</p>
+      </div>
+
+      <div id="bookContainer" class="book-container">
+        <!-- Books will be displayed using JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About BookNest</h2>
+    <p>BookNest is a simple online bookstore that helps customers search, filter and purchase books easily.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 BookNest | Online Bookstore</p>
+  </footer>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal" hidden>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h2>🛒 Your Cart</h2>
+        <button type="button" id="closeCartBtn" class="close-btn" aria-label="Close cart">✕</button>
+      </div>
+
+      <div id="cartItems" class="cart-items">
+        <!-- Cart items are displayed using JavaScript -->
+      </div>
+
+      <div class="cart-footer">
+        <p class="cart-total">Total: <span id="cartTotal">₹0</span></p>
+        <button type="button" id="checkoutBtn" class="checkout-btn">Checkout</button>
+        <button type="button" id="clearCartBtn" class="clear-cart-btn">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification (shows messages like "added to cart") -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
